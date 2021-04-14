@@ -18,6 +18,10 @@ public class Ave extends Animal {
 		super( nombre, edad, habitat, genero, zona);
 		this.colorPlumas = colorPlumas;
 		listado.add(this);
+		Animal.totalAnimales ++;
+		if(this.zona != null) {
+			this.zona.agregarAnimales(this);
+		}
 	}
 	
 	public Ave( String nombre, int edad, String habitat, String genero,
@@ -25,9 +29,18 @@ public class Ave extends Animal {
 		super( nombre, edad, habitat, genero);
 		this.colorPlumas = colorPlumas;
 		listado.add(this);
+		Animal.totalAnimales ++;
+		if(this.zona != null) {
+			this.zona.agregarAnimales(this);
+		}
 	}
 	
 	public Ave() {
+		totalAnimales ++;
+		listado.add(this);
+		if(this.zona != null) {
+			this.zona.agregarAnimales(this);
+		}
 		
 	}
 		
@@ -54,4 +67,33 @@ public class Ave extends Animal {
 		// TODO Auto-generated method stub
 		return colorPlumas;
 	}
+
+	public static ArrayList<Ave> getListado() {
+		return listado;
+	}
+
+	public static void setListado(ArrayList<Ave> listado) {
+		Ave.listado = listado;
+	}
+
+	public static int getHalcones() {
+		return halcones;
+	}
+
+	public static void setHalcones(int halcones) {
+		Ave.halcones = halcones;
+	}
+
+	public static int getAguilas() {
+		return aguilas;
+	}
+
+	public static void setAguilas(int aguilas) {
+		Ave.aguilas = aguilas;
+	}
+
+	public void setColorPlumas(String colorPlumas) {
+		this.colorPlumas = colorPlumas;
+	}
+	
 }

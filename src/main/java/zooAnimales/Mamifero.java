@@ -20,6 +20,10 @@ public class Mamifero extends Animal {
 		this.pelaje = pelaje;
 		this.patas = patas;
 		listado.add(this);
+		Animal.totalAnimales ++;
+		if(this.zona != null) {
+			this.zona.agregarAnimales(this);
+		}
 	}
 
 	
@@ -29,10 +33,18 @@ public class Mamifero extends Animal {
 		this.pelaje = pelaje;
 		this.patas = patas;
 		listado.add(this);
+		Animal.totalAnimales ++;
+		if(this.zona != null) {
+			this.zona.agregarAnimales(this);
+		}
 	}
 	public Mamifero() {
-		super();
-		// TODO Auto-generated constructor stub
+		totalAnimales ++;
+		listado.add(this);
+		if(this.zona != null) {
+			this.zona.agregarAnimales(this);
+		}
+		
 	}
 
 
@@ -63,4 +75,45 @@ public class Mamifero extends Animal {
 		// TODO Auto-generated method stub
 		return pelaje;
 	}
+
+
+	public static ArrayList<Mamifero> getListado() {
+		return listado;
+	}
+
+
+	public static void setListado(ArrayList<Mamifero> listado) {
+		Mamifero.listado = listado;
+	}
+
+
+	public static int getCaballos() {
+		return caballos;
+	}
+
+
+	public static void setCaballos(int caballos) {
+		Mamifero.caballos = caballos;
+	}
+
+
+	public static int getLeones() {
+		return leones;
+	}
+
+
+	public static void setLeones(int leones) {
+		Mamifero.leones = leones;
+	}
+
+
+	public void setPelaje(boolean pelaje) {
+		this.pelaje = pelaje;
+	}
+
+
+	public void setPatas(int patas) {
+		this.patas = patas;
+	}
+	
 }

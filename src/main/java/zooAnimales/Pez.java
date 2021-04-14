@@ -22,6 +22,10 @@ public class Pez extends Animal{
 		this.colorEscamas = colorEscamas;
 		this.cantidadAletas = catidadAletas;
 		listado.add(this);
+		Animal.totalAnimales ++;
+		if(this.zona != null) {
+			this.zona.agregarAnimales(this);
+		}
 	}
 
 	public Pez( String nombre, int edad, String habitat, String genero,
@@ -30,9 +34,17 @@ public class Pez extends Animal{
 		this.colorEscamas = colorEscamas;
 		this.cantidadAletas = catidadAletas;
 		listado.add(this);
+		Animal.totalAnimales ++;
+		if(this.zona != null) {
+			this.zona.agregarAnimales(this);
+		}
 	}
 	public Pez() {
-		
+		totalAnimales ++;
+		listado.add(this);
+		if(this.zona != null) {
+			this.zona.agregarAnimales(this);
+		}
 	}
 	
 	public static int cantidadPeces() {
@@ -62,4 +74,37 @@ public class Pez extends Animal{
 		// TODO Auto-generated method stub
 		return colorEscamas;
 	}
+
+	public static ArrayList<Pez> getListado() {
+		return listado;
+	}
+
+	public static void setListado(ArrayList<Pez> listado) {
+		Pez.listado = listado;
+	}
+
+	public static int getSalmones() {
+		return salmones;
+	}
+
+	public static void setSalmones(int salmones) {
+		Pez.salmones = salmones;
+	}
+
+	public static int getBacalaos() {
+		return bacalaos;
+	}
+
+	public static void setBacalaos(int bacalaos) {
+		Pez.bacalaos = bacalaos;
+	}
+
+	public void setColorEscamas(String colorEscamas) {
+		this.colorEscamas = colorEscamas;
+	}
+
+	public void setCantidadAletas(int cantidadAletas) {
+		this.cantidadAletas = cantidadAletas;
+	}
+
 }

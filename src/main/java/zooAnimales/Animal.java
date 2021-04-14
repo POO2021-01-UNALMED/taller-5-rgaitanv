@@ -1,16 +1,13 @@
 package zooAnimales;
-
-import java.util.ArrayList;
-
 import gestion.Zona;
 
 public class Animal {
-	private static int totalAnimales;
+	 static int totalAnimales=0;
 	private String nombre;
 	private int edad;
 	private String habitat;
 	private String genero;
-	private Zona zona;
+	protected Zona zona;
 	
 	
 	
@@ -23,6 +20,9 @@ public class Animal {
 		this.habitat = habitat;
 		this.genero = genero;
 		this.zona = zona;
+		if(this.zona != null) {
+			this.zona.agregarAnimales(this);
+		}
 	}
 	public Animal( String nombre, int edad, String habitat, String genero) {
 		super();
@@ -31,11 +31,18 @@ public class Animal {
 		this.edad = edad;
 		this.habitat = habitat;
 		this.genero = genero;
+		if(this.zona != null) {
+			this.zona.agregarAnimales(this);
+		}
 
 	}
 	
 	public Animal() {
-		
+
+		totalAnimales++;
+		if(this.zona != null) {
+			this.zona.agregarAnimales(this);
+		}
 	}
 
 	public String movimiento() {
@@ -56,9 +63,16 @@ public class Animal {
 	}
 	
 	public String toString() {
+		if(this.zona != null) {
 		return "Mi nombre es " + this.nombre +","+ "tengo una edad de " + this.edad+ ","
 				+"habito en " + this.habitat + "y mi genero es "+ this.genero + ","+
 				"la zona en la que me ubico es " + this.zona + "," +"en el " + this.zona.getZoo().getNombre();
+		}else {
+			return "Mi nombre es "+ this.nombre +", tengo una edad de "+ this.edad +", habito en "
+					+ this.habitat +" y mi genero es "+ this.genero;
+		
+		}
+		
 	}
 
 
