@@ -10,7 +10,7 @@ public class Pez extends Animal{
 	public static int salmones;
 	public static int bacalaos;
 	private String colorEscamas;
-	private int catidadAletas;
+	private int cantidadAletas;
 	
 	
 	
@@ -20,7 +20,7 @@ public class Pez extends Animal{
 			 String colorEscamas, int catidadAletas) {
 		super( nombre, edad, habitat, genero, zona);
 		this.colorEscamas = colorEscamas;
-		this.catidadAletas = catidadAletas;
+		this.cantidadAletas = catidadAletas;
 		listado.add(this);
 	}
 
@@ -28,7 +28,7 @@ public class Pez extends Animal{
 			 String colorEscamas, int catidadAletas) {
 		super( nombre, edad, habitat, genero);
 		this.colorEscamas = colorEscamas;
-		this.catidadAletas = catidadAletas;
+		this.cantidadAletas = catidadAletas;
 		listado.add(this);
 	}
 	public Pez() {
@@ -43,13 +43,23 @@ public class Pez extends Animal{
 		return "nadar";
 	}
 	
-	public void crearSalmon(String nombre, int edad,String genero) {
+	public static void crearSalmon(String nombre, int edad,String genero) {
 		Pez salmon = new Pez(nombre, edad,"oceano", genero, "rojo", 6 );
 		salmones ++;
 	}
 	
-	public void crearBacalao(String nombre, int edad,String genero) {
+	public static void crearBacalao(String nombre, int edad,String genero) {
 		Pez bacalao = new Pez(nombre, edad,"oceano", genero, "gris", 6 );
 		bacalaos++;
+	}
+
+	public int getCantidadAletas() {
+		// TODO Auto-generated method stub
+		return cantidadAletas;
+	}
+
+	public Object getColorEscamas() {
+		// TODO Auto-generated method stub
+		return colorEscamas;
 	}
 }

@@ -39,14 +39,19 @@ public class Ave extends Animal {
 		return "volar";
 	}
 	
-	public void crearHalcon(String nombre, int edad,String genero) {
+	public static void crearHalcon(String nombre, int edad,String genero) {
 		Ave Halcon = new Ave(nombre, edad, "montanas",genero, "cafe glorioso");
 		halcones ++;
 		
 	}
 	
-	public void crearAguila(String nombre, int edad,String genero) {
+	public static void crearAguila(String nombre, int edad,String genero) {
 		Ave aguila = new Ave(nombre, edad, "montanas",genero, "blanco y amarillo");
 		aguilas++;
+	}
+
+	public Object getColorPlumas() {
+		// TODO Auto-generated method stub
+		return colorPlumas;
 	}
 }

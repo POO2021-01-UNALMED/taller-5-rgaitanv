@@ -44,14 +44,24 @@ public class Reptil extends Animal{
 		return "reptar";
 	}
 	
-	public void crearIguana(String nombre, int edad,String genero) {
+	public static void crearIguana(String nombre, int edad,String genero) {
 		Reptil iguana = new Reptil(nombre,edad,"humedal",genero,"verde",3);
 		iguanas++;
 	}
 	
-	public void crearSerpiente(String nombre, int edad,String genero) {
+	public static void crearSerpiente(String nombre, int edad,String genero) {
 		Reptil serpiente = new Reptil(nombre,edad,"jungla",genero,"blanco",1);
 		serpientes++;
+	}
+
+	public int getLargoCola() {
+		// TODO Auto-generated method stub
+		return largoCola;
+	}
+
+	public Object getColorEscamas() {
+		// TODO Auto-generated method stub
+		return colorEscamas;
 	}
 	
 	

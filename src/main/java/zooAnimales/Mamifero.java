@@ -40,15 +40,27 @@ public class Mamifero extends Animal {
 		return listado.size();
 	}
 	
-	public void crearCaballo(String nombre,int edad, String genero) {
+	public static void crearCaballo(String nombre,int edad, String genero) {
 		Mamifero caballo = new Mamifero(nombre,edad,"pradera",genero,true,4);
 		caballos ++;
 		
 	}
 	
-	public void crearLeon(String nombre,int edad, String genero) {
+	public static void crearLeon(String nombre,int edad, String genero) {
 		Mamifero leon = new Mamifero(nombre,edad,"selva",genero,true,4);
 		leones ++;
 		
+	}
+
+
+	public int getPatas() {
+		// TODO Auto-generated method stub
+		return patas;
+	}
+
+
+	public boolean isPelaje() {
+		// TODO Auto-generated method stub
+		return pelaje;
 	}
 }
