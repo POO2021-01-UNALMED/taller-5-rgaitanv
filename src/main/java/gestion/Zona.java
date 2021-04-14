@@ -18,10 +18,10 @@ public class Zona {
 		this.zoo = zoo;
 		this.animales = animales;
 	}
-	public Zona(String nombre, Zoologico zoo) {
+	public Zona(String nombre, Zoologico zo) {
 		super();
 		this.nombre = nombre;
-		this.zoo = zoo;
+		this.zoo = zo;
 
 	}
 
